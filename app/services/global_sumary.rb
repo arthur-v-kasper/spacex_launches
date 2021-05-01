@@ -23,7 +23,7 @@ class GlobalSumary
     end
 
     def getParams
-        params = {upcoming:{'query':{'upcoming': 'true'},'options':{'select':['name','flight_number','date_utc'],'limit': '5','sort':{'flight_number': 'asc' }}},
-                  past:{'query':{'upcoming': 'false'},'options':{'select':['name','flight_number','date_utc'],'limit': '5','sort':{'flight_number': 'desc' }}}}        
+        params = {upcoming:{'query':{'upcoming': 'true'},'options':{'select':['name','flight_number','date_local'],'limit': '5','sort':{'flight_number': 'asc' }}},
+                  past:{'query':{'upcoming': 'false'},'options':{'select':['name','flight_number','date_local'],'limit': '5','sort':{'flight_number': 'desc' }}}}        
     end
 end
