@@ -1,30 +1,29 @@
 class GlobalSumary
     include HTTParty
-    base_uri 'https://api.spacexdata.com/v4'
+    base_uri 'https://api.spacexdata.com/v4/launches'
 
     def initialize
       @options = getParams
     end
 
     def past
-        self.class.get("/past",@options)
+        self.class.post("/query",body: @options[:past]).parsed_response
     end
 
     def next
-        self.class.get("/launches/next")
+        self.class.get("/next")
     end
 
     def upcoming
-       self.class.post("/launches/query",body: @options).parsed_response
+       self.class.post("/query",body: @options[:upcoming]).parsed_response
     end
 
     def latest
-        self.class.get("/launches/latest")
+        self.class.get("/latest")
     end
 
-    #private
-    def getParams #(handler)
-         {'query':{'upcoming': 'true'},'options':{'select':['name','flight_number','date_utc'],'limit': '5','sort':{'flight_number': 'asc' }}} #upcoming
-         #{'query':{'upcoming': 'false'},'options':{'select':['name','flight_number','date_utc'],'limit': '5','sort':{'flight_number': 'desc' }}} #past         
+    def getParams
+        params = {upcoming:{'query':{'upcoming': 'true'},'options':{'select':['name','flight_number','date_local'],'limit': '5','sort':{'flight_number': 'asc' }}},
+                  past:{'query':{'upcoming': 'false'},'options':{'select':['name','flight_number','date_local'],'limit': '5','sort':{'flight_number': 'desc' }}}}        
     end
 end

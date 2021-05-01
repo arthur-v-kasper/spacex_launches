@@ -2,8 +2,11 @@ class LauchController < ApplicationController
   before_action :set_global_summary_service
   
   def index
+    # usando para imprimir o resultado na tela, depois irei remover
     self.next
     self.latest
+    self.past
+    self.upcoming
   end
 
   def past
@@ -11,7 +14,7 @@ class LauchController < ApplicationController
   end
 
   def upcoming
-    @upcoming = @lauch_service.upcoming
+    @upcoming = @lauch_service.upcoming  
   end
 
   def latest
