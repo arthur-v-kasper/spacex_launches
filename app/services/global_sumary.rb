@@ -11,7 +11,7 @@ class GlobalSumary
     end
 
     def next
-        self.class.get("/next")
+        self.class.get("/next").parsed_response
     end
 
     def upcoming
@@ -19,10 +19,11 @@ class GlobalSumary
     end
 
     def latest
-        self.class.get("/latest")
+        self.class.get("/latest").parsed_response
     end
 
     def getParams
+                    # identar esses hash
         params = {upcoming:{'query':{'upcoming': 'true'},'options':{'select':['name','flight_number','date_local'],'limit': '5','sort':{'flight_number': 'asc' }}},
                   past:{'query':{'upcoming': 'false'},'options':{'select':['name','flight_number','date_local'],'limit': '5','sort':{'flight_number': 'desc' }}}}        
     end
