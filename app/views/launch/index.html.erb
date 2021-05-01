@@ -2,7 +2,7 @@
   <div class="row g-2">
         <div class="col-6">
             <div class="p-3 border bg-light">            
-                <h1 class="fw-bold">Last Lauch</h1>
+                <h1 class="fw-bold">Last Launch</h1>
                 <p><span class="fw-bold">Name:</span> <%= @latest['name'] %></p>
                 <p><span class="fw-bold">Date:</span> <%= formatter_simple_date(@latest['date_local']) %></p>   
                 <p><span class="fw-bold">Details:</span> <%= @latest['details'] %></p>                         
@@ -11,7 +11,7 @@
         
         <div class="col-6">
             <div class="p-3 border bg-light">
-                <h1 class="fw-bold">Next Lauch</h1>
+                <h1 class="fw-bold">Next Launch</h1>
                 <p><span class="fw-bold">Name:</span> <%= @next['name'] %></p>
                 <p><span class="fw-bold">Date:</span> <%= formatter_simple_date(@next['date_local']) %></p>
                 <p><span class="fw-bold">Details:</span> <%= @next['details'] %></p>
@@ -20,7 +20,7 @@
 
         <div class="col-6"> 
             <div class="p-3 border bg-light">
-                <h3 class="fw-bold">Pastes Lauches</h3>
+                <h3 class="fw-bold">Pastes Launches</h3>
                <table class="table">
                <thead>
                    <tr>
@@ -30,9 +30,9 @@
                    </tr>
                </thead>
                <tbody>
-               <% @past['docs'].each do |lauch| %>                   
+               <% @past['docs'].each do |launch| %>                   
                    <tr>
-                      <% lauch.except("id").each do |property, value| %>                    
+                      <% launch.except("id").each do |property, value| %>                    
                          <td><%= (property != "date_local") ? value : formatter_simple_date(value) %></td>
                        <% end %>                    
                    </tr>
@@ -44,7 +44,7 @@
     
          <div class="col-6"> 
             <div class="p-3 border bg-light">
-                <h3 class="fw-bold">Upcoming Lauches</h3>
+                <h3 class="fw-bold">Upcoming Launches</h3>
                <table class="table">
                <thead>
                    <tr>
@@ -54,9 +54,9 @@
                    </tr>
                </thead>
                <tbody>
-               <% @upcoming['docs'].each do |lauch| %>                  
+               <% @upcoming['docs'].each do |launch| %>                  
                    <tr>
-                      <% lauch.except("id").each do |property, value| %>                    
+                      <% launch.except("id").each do |property, value| %>                    
                          <td><%= (property != "date_local") ? value : formatter_simple_date(value) %></td>
                        <% end %>                    
                    </tr>

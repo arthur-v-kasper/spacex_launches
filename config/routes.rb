@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  root 'lauch#index'
-  get 'lauch/past', to: 'lauch#past'
-  get 'lauch/upcoming', to: 'lauch#upcoming'
-  get 'lauch/latest', to: 'lauch#latest'
-  get 'lauch/next', to: 'lauch#next'
-  
+  root 'launch#index'
+  get 'launch/past', to: 'launch#past'
+  get 'launch/upcoming', to: 'launch#upcoming'
+  get 'launch/latest', to: 'launch#latest'
+  get 'launch/next', to: 'launch#next'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
