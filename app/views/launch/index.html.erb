@@ -1,20 +1,22 @@
 <div class="container mt-3">
   <div class="row g-2">
         <div class="col-6">
-            <div class="p-3 border bg-light">            
+            <div class="p-3 border bg-light position-relative">            
                 <h1 class="fw-bold">Last Launch</h1>
                 <p><span class="fw-bold">Name:</span> <%= @latest['name'] %></p>
                 <p><span class="fw-bold">Date:</span> <%= formatter_simple_date(@latest['date_local']) %></p>   
-                <p><span class="fw-bold">Details:</span> <%= @latest['details'] %></p>                         
+                <p><span class="fw-bold">Details:</span> <%= @latest['details'] %></p>
+                <div class="position-absolute top-0 end-0"> <%= image_tag(@latest['links']['patch']['small'], class:"launch-logo") %> </div>                         
             </div>               
         </div>
         
         <div class="col-6">
-            <div class="p-3 border bg-light">
+            <div class="p-3 border bg-light position-relative">
                 <h1 class="fw-bold">Next Launch</h1>
                 <p><span class="fw-bold">Name:</span> <%= @next['name'] %></p>
                 <p><span class="fw-bold">Date:</span> <%= formatter_simple_date(@next['date_local']) %></p>
                 <p><span class="fw-bold">Details:</span> <%= @next['details'] %></p>
+                <div class="position-absolute top-0 end-0"> <%= image_tag(@latest['links']['patch']['small'],  class:"launch-logo") %> </div>                         
             </div>
         </div>
 

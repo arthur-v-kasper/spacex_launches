@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .launch-logo {
+     height: 120px;
+     width: 120px;
+ }
