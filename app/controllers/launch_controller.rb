@@ -1,5 +1,5 @@
 class LaunchController < ApplicationController
-  before_action :set_global_summary_service
+  before_action :set_spacex_api_service
   
   def index
     self.next
@@ -25,7 +25,7 @@ class LaunchController < ApplicationController
   end
 
 private
-  def set_global_summary_service
-    @launch_service = GlobalSumary.new
+  def set_spacex_api_service
+    @launch_service = SpacexApi.new
   end
 end

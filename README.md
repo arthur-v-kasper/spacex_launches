@@ -47,7 +47,7 @@ To communicate with the API was created a ```GlobalSumary``` in the folder ```ap
 
 This class has four methods, where each of them is responsible for information ( ```next```, ```past```, ```upcoming```, ```latest``` ), two of these methods use the same endpoint, where it is possible to perform queries to customize the result, for this, was created the method```getParams``` that return a ```hash``` with the necessary filters and data for querying and displaying the results.
 
-The controller ```LaunchController``` consumes data from ```GlobalSumary``` so that it is then displayed in the view, it has a similar structure, with four methods, the implementation is very simple, since the bureaucratic part is in charge of the service. =)
+The controller ```LaunchController``` consumes data from ```SpacexApi``` so that it is then displayed in the view, it has a similar structure, with four methods, the implementation is very simple, since the bureaucratic part is in charge of the service. =)
 
 As the application has only one page, all methods have been instantiated in the ```index```, so when the route is accessed, all data is available for display.
 
